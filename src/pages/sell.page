@@ -1,0 +1,34 @@
+<apex:page showHeader="true" sidebar="true" standardController="Car__c" extensions="CarController">
+    <apex:pageMessages />
+    <apex:pageBlock title="Car Sell">
+        <apex:pageBlockSection >Are you sure you want to sell this car?</apex:pageBlockSection>
+        <apex:pageBlockSection title="Car Details">
+            <apex:outputField value="{!Car__c.Name}"/>
+            <apex:outputField value="{!Car__c.Engine__c}"/>
+            <apex:outputField value="{!Car__c.Brand__r.Name}"/>
+            <apex:outputField value="{!Car__c.Fuel__c}"/>
+            <apex:outputField value="{!Car__c.Model__r.Name}"/>
+            <apex:outputField value="{!Car__c.Power__c}"/>
+            <apex:outputField value="{!Car__c.Colour__c}"/>
+            <apex:outputField value="{!Car__c.UrbanConsumption__c}"/>
+            <apex:outputField value="{!Car__c.LicenseNumber__c}"/>
+            <apex:outputField value="{!Car__c.ExtraurbanConsumption__c}"/>
+            <apex:outputField value="{!Car__c.AirConditioning__c}"/>
+            <apex:outputField value="{!Car__c.Heating__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Car status">
+            <apex:outputField value="{!Car__c.Rented__c}"/>
+            <apex:outputField value="{!Car__c.RentHours__c}"/>
+            <apex:outputField value="{!Car__c.Sold__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Sell Price">
+            <apex:outputField value="{!Car__c.Price__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons >
+            <apex:form >
+                <apex:commandButton value="Accept" action="{!sell}"/> 
+                <apex:commandButton value="Cancel" action="{!goBack}"/> 
+            </apex:form>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+</apex:page>

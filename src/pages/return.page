@@ -1,0 +1,21 @@
+<apex:page showHeader="true" sidebar="true" standardController="Car__c" extensions="CarController">
+    <apex:pageMessages />
+    <apex:form >
+        <apex:pageBlock title="Car Return">
+            <apex:pageBlockSection >Are you sure you want to return this car?</apex:pageBlockSection>
+            <apex:pageBlockSection title="Car Details">
+                <apex:outputField value="{!Car__c.Name}"/>
+                <apex:outputField value="{!Car__c.LicenseNumber__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Car status">
+                <apex:outputField value="{!Car__c.Rented__c}"/>
+                <apex:outputField value="{!Car__c.RentHours__c}"/>
+                <apex:outputField value="{!Car__c.Sold__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Accept" action="{!returnRentedVehicle}"/> 
+                <apex:commandButton value="Cancel" action="{!goBack}"/> 
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
